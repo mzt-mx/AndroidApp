@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication222">
         <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -20,6 +23,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".CalculatorActivity" android:exported="false" />
+        <activity android:name=".ListActivity" android:exported="false" />
+        <activity android:name=".WeatherActivity" android:exported="false" />
     </application>
 
 </manifest>

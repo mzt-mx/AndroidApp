@@ -8,23 +8,25 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-
+        setContentView(R.layout.activity_home)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        // Обработка нажатия на кнопку "Начать"
-        val startButton = findViewById<Button>(R.id.startButton)
-        startButton.setOnClickListener {
-            startActivity(Intent(this, HomeActivity::class.java))
-            finish()
+        findViewById<Button>(R.id.buttonCalculator).setOnClickListener {
+            startActivity(Intent(this, CalculatorActivity::class.java))
+        }
+        findViewById<Button>(R.id.buttonList).setOnClickListener {
+            startActivity(Intent(this, ListActivity::class.java))
+        }
+        findViewById<Button>(R.id.buttonWeather).setOnClickListener {
+            startActivity(Intent(this, WeatherActivity::class.java))
         }
     }
 }
